@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    button{
+        font-size: larger;
+        font-weight: 400;
+        background: transparent;
+        background-color: rgb(11, 11, 58);
+        color: #fff;
+    }
+    .container{
+        margin: 200px;
+        padding: 100px;
+    }
+</style>
+<body>
+   <main>
+    <div class="container">
+        <h2>Background Color:<span class="color">white</span></h2>
+        <button class="btn btn-hero" id="btn">click here to change color</button>
+    </div>
+   </main>
+
+<script>
+const colors=["green","red","pink","#ef0","blue","orange","purple","aqua","brown","darkred"];
+const btn=document.getElementById("btn");
+const color=document.querySelector(".color");
+
+btn.addEventListener("click",function(){
+    //get random no. between 0-3
+    const randomno=getRandomNo();
+    console.log(randomno);
+    document.body.style.backgroundColor=colors[randomno];
+    color.textContent=colors[randomno];
+});
+
+function getRandomNo(){
+    return Math.floor ( Math.random() * colors.length);
+
+}
+
+</script>
+
+</body>
+</html>
+
